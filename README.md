@@ -11,7 +11,7 @@ In order to run properly, required environement varaibles are:
 - `/` : basic "Hello World" message
 - `/db-connect`: Check if the app connects to the DB based on DB_URI
 - `redis-connect`: Check if the app connects to Redis based on REDIS_HOST and REDIS_PASSWORD
--/db-connect:
+
 
 
 To fire up services : `docker-compose up -d`
