@@ -13,5 +13,7 @@ In order to run properly, required environement varaibles are:
 - `redis-connect`: Check if the app connects to Redis based on REDIS_HOST and REDIS_PASSWORD
 
 
-
 To fire up services : `docker-compose up -d`
+Note to M1 users:
+`export DOCKER_DEFAULT_PLATFORM=linux/amd64` is required before building the image.
+

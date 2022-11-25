@@ -22,3 +22,15 @@ services:
       - 6379:6379
     # REDIS_HOST=localhost
     # REDIS_PASSWORD=devpass
+
+  backend:
+    build:
+      dockerfile: ./backend.Dockerfile
+    environment:
+      - DB_URI=postgresql://dev:devpass@postgres:5432/db
+      - REDIS_HOST=redis
+      - REDIS_PASSWORD=devpass
+    ports:
+      - "8000:8000"
+    expose:
+      - "8000"
