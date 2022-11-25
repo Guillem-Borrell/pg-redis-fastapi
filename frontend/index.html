@@ -1,0 +1,28 @@
+<html>
+
+<div>
+    From server <span id="server"></span>:
+
+    <ul>
+        <li>Message: <span id="message">Waiting....</span></li>
+        <li>DB: <span id="db">Waiting....</span></li>
+        <li>REDIS: <span id="redis">Waiting....</span></li>
+    </ul>
+</div>
+<script>
+    const api = "http://localhost:8000"
+    const values = [
+        { uri: "/", selector: "#message" },
+        { uri: "/db-connect", selector: "#db" },
+        { uri: "/redis-connect", selector: "#redis" }
+    ]
+    document.querySelector("#server").innerHTML = api
+    values.map((item) => {
+        fetch(api + item.uri)
+            .then((response) => response.json())
+            .then((data) => document.querySelector(item.selector).innerHTML = data.message)
+    })
+
+</script>
+
+</html>

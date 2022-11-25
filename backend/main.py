@@ -5,11 +5,19 @@ __version__ = "0.1"
 
 import os
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 import sqlalchemy as db
 import redis
 
-app = FastAPI()
 
+app = FastAPI()
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins="*",
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/")
 async def root():
