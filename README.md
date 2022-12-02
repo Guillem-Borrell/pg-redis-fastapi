@@ -5,7 +5,7 @@ Simple image to asses if your deployment process works.
 In the chart folder, execute:
 
 ```
-helm isntall pg-redis-fastapi .
+helm install pg-redis-fastapi .
 ```
 
 You can check if the server is live by forwarding the port 8000
